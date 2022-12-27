@@ -22,7 +22,7 @@ const TopPost = () => {
             <p className="text-xs">2 days ago</p>
           </div>
         </div>
-        <div className="mx-14 my-2">
+        <div className="md:mx-14 my-2">
           <p className="text-sm text-gray-500 mb-2">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Voluptatum, nam tenetur sed animi mollitia repellendus laboriosam
@@ -32,7 +32,7 @@ const TopPost = () => {
           <img className="max-h-96 rounded-xl mx-auto" src={imgOne} alt="" />
         </div>
         {/* like, comment, share */}
-        <div className="border-y py-5 mt-5 mx-14 text-gray-500 flex items-center justify-around">
+        <div className="border-y py-5 mt-5 md:mx-14 text-gray-500 flex items-center justify-around">
           <div className="flex items-center gap-2">
             <span>
               <FaRegHeart></FaRegHeart>
@@ -52,8 +52,11 @@ const TopPost = () => {
             </span>
           </div>
         </div>
+        <div>
+          <p className="text-sm my-2 md:mx-14 font-semibold">Comments...</p>
+        </div>
         {/* comment */}
-        <div className="mx-14 mb-5 mt-2">
+        <div className="md:mx-14 mb-5 mt-2">
           <div className="border hover:shadow p-4">
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
@@ -63,12 +66,10 @@ const TopPost = () => {
               </label>
               <div className="flex items-center gap-1">
                 <h4 className="text-[16px]">Murad5501</h4>
-                <p className="text-sm">commented</p>
-                <p className="text-xs">2 days ago</p>
               </div>
             </div>
             <div>
-              <p className="text-sm text-gray-500 ml-14 mb-2">
+              <p className="text-sm text-gray-500 sm:ml-14 mb-2">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptatum, nam tenetur sed animi mollitia repellendus
                 laboriosam placeat necessitatibus qui nobis omnis illo{" "}
@@ -89,9 +90,10 @@ const TopPost = () => {
               </span>
               <p>Reply</p>
             </div>
+            <p className="text-xs">2 days ago</p>
           </div>
         </div>
-        <div className="mx-14 mb-5">
+        <div className="md:mx-14 mb-5 mt-2">
           <div className="border hover:shadow p-4">
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
@@ -101,12 +103,10 @@ const TopPost = () => {
               </label>
               <div className="flex items-center gap-1">
                 <h4 className="text-[16px]">Murad5501</h4>
-                <p className="text-sm">commented</p>
-                <p className="text-xs">2 days ago</p>
               </div>
             </div>
             <div>
-              <p className="text-sm text-gray-500 ml-14 mb-2">
+              <p className="text-sm text-gray-500 sm:ml-14 mb-2">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptatum, nam tenetur sed animi mollitia repellendus
                 laboriosam placeat necessitatibus qui nobis omnis illo{" "}
@@ -127,9 +127,10 @@ const TopPost = () => {
               </span>
               <p>Reply</p>
             </div>
+            <p className="text-xs">2 days ago</p>
           </div>
         </div>
-        <div className="mx-14 mb-5">
+        <div className="md:mx-14 mb-5 mt-2">
           <div className="border hover:shadow p-4">
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
@@ -139,12 +140,15 @@ const TopPost = () => {
               </label>
               <div className="flex items-center gap-1">
                 <h4 className="text-[16px]">Murad5501</h4>
-                <p className="text-sm">commented</p>
-                <p className="text-xs">2 days ago</p>
               </div>
             </div>
             <div>
-              <p className="text-sm text-gray-500 ml-14 mb-2">nice</p>
+              <p className="text-sm text-gray-500 sm:ml-14 mb-2">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Voluptatum, nam tenetur sed animi mollitia repellendus
+                laboriosam placeat necessitatibus qui nobis omnis illo{" "}
+                <span className="text-primary font-semibold">see more...</span>
+              </p>
             </div>
           </div>
           <div className="flex items-center gap-5 m-2 text-gray-500 text-xs">
@@ -160,6 +164,7 @@ const TopPost = () => {
               </span>
               <p>Reply</p>
             </div>
+            <p className="text-xs">2 days ago</p>
           </div>
         </div>
       </div>
@@ -178,7 +183,7 @@ const TopPost = () => {
             <p className="text-xs">2 days ago</p>
           </div>
         </div>
-        <div className="mx-14 my-2">
+        <div className="md:mx-14 my-2">
           <p className="text-sm text-gray-500 mb-2">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Voluptatum, nam tenetur sed animi mollitia repellendus laboriosam
@@ -188,7 +193,7 @@ const TopPost = () => {
           <img className="max-h-96 rounded-xl mx-auto" src={imgTwo} alt="" />
         </div>
         {/* like, comment, share */}
-        <div className="border-y py-5 mt-5 mx-14 text-gray-500 flex items-center justify-around">
+        <div className="border-y py-5 mt-5 md:mx-14 text-gray-500 flex items-center justify-around">
           <div className="flex items-center gap-2">
             <span>
               <FaRegHeart></FaRegHeart>
@@ -208,8 +213,11 @@ const TopPost = () => {
             </span>
           </div>
         </div>
+        <div>
+          <p className="text-sm my-2 md:mx-14 font-semibold">Comments...</p>
+        </div>
         {/* comment */}
-        <div className="mx-14 mb-5 mt-2">
+        <div className="md:mx-14 mb-5 mt-2">
           <div className="border hover:shadow p-4">
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
@@ -219,12 +227,10 @@ const TopPost = () => {
               </label>
               <div className="flex items-center gap-1">
                 <h4 className="text-[16px]">Murad5501</h4>
-                <p className="text-sm">commented</p>
-                <p className="text-xs">2 days ago</p>
               </div>
             </div>
             <div>
-              <p className="text-sm text-gray-500 ml-14 mb-2">
+              <p className="text-sm text-gray-500 sm:ml-14 mb-2">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptatum, nam tenetur sed animi mollitia repellendus
                 laboriosam placeat necessitatibus qui nobis omnis illo{" "}
@@ -245,9 +251,10 @@ const TopPost = () => {
               </span>
               <p>Reply</p>
             </div>
+            <p className="text-xs">2 days ago</p>
           </div>
         </div>
-        <div className="mx-14 mb-5">
+        <div className="md:mx-14 mb-5 mt-2">
           <div className="border hover:shadow p-4">
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
@@ -257,12 +264,10 @@ const TopPost = () => {
               </label>
               <div className="flex items-center gap-1">
                 <h4 className="text-[16px]">Murad5501</h4>
-                <p className="text-sm">commented</p>
-                <p className="text-xs">2 days ago</p>
               </div>
             </div>
             <div>
-              <p className="text-sm text-gray-500 ml-14 mb-2">
+              <p className="text-sm text-gray-500 sm:ml-14 mb-2">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptatum, nam tenetur sed animi mollitia repellendus
                 laboriosam placeat necessitatibus qui nobis omnis illo{" "}
@@ -283,9 +288,10 @@ const TopPost = () => {
               </span>
               <p>Reply</p>
             </div>
+            <p className="text-xs">2 days ago</p>
           </div>
         </div>
-        <div className="mx-14 mb-5">
+        <div className="md:mx-14 mb-5 mt-2">
           <div className="border hover:shadow p-4">
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
@@ -295,12 +301,15 @@ const TopPost = () => {
               </label>
               <div className="flex items-center gap-1">
                 <h4 className="text-[16px]">Murad5501</h4>
-                <p className="text-sm">commented</p>
-                <p className="text-xs">2 days ago</p>
               </div>
             </div>
             <div>
-              <p className="text-sm text-gray-500 ml-14 mb-2">nice</p>
+              <p className="text-sm text-gray-500 sm:ml-14 mb-2">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Voluptatum, nam tenetur sed animi mollitia repellendus
+                laboriosam placeat necessitatibus qui nobis omnis illo{" "}
+                <span className="text-primary font-semibold">see more...</span>
+              </p>
             </div>
           </div>
           <div className="flex items-center gap-5 m-2 text-gray-500 text-xs">
@@ -316,6 +325,7 @@ const TopPost = () => {
               </span>
               <p>Reply</p>
             </div>
+            <p className="text-xs">2 days ago</p>
           </div>
         </div>
       </div>
@@ -334,7 +344,7 @@ const TopPost = () => {
             <p className="text-xs">2 days ago</p>
           </div>
         </div>
-        <div className="mx-14 my-2">
+        <div className="md:mx-14 my-2">
           <p className="text-sm text-gray-500 mb-2">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Voluptatum, nam tenetur sed animi mollitia repellendus laboriosam
@@ -344,7 +354,7 @@ const TopPost = () => {
           <img className="max-h-96 rounded-xl mx-auto" src={imgThree} alt="" />
         </div>
         {/* like, comment, share */}
-        <div className="border-y py-5 mt-5 mx-14 text-gray-500 flex items-center justify-around">
+        <div className="border-y py-5 mt-5 md:mx-14 text-gray-500 flex items-center justify-around">
           <div className="flex items-center gap-2">
             <span>
               <FaRegHeart></FaRegHeart>
@@ -364,8 +374,11 @@ const TopPost = () => {
             </span>
           </div>
         </div>
+        <div>
+          <p className="text-sm my-2 md:mx-14 font-semibold">Comments...</p>
+        </div>
         {/* comment */}
-        <div className="mx-14 mb-5 mt-2">
+        <div className="md:mx-14 mb-5 mt-2">
           <div className="border hover:shadow p-4">
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
@@ -375,12 +388,10 @@ const TopPost = () => {
               </label>
               <div className="flex items-center gap-1">
                 <h4 className="text-[16px]">Murad5501</h4>
-                <p className="text-sm">commented</p>
-                <p className="text-xs">2 days ago</p>
               </div>
             </div>
             <div>
-              <p className="text-sm text-gray-500 ml-14 mb-2">
+              <p className="text-sm text-gray-500 sm:ml-14 mb-2">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptatum, nam tenetur sed animi mollitia repellendus
                 laboriosam placeat necessitatibus qui nobis omnis illo{" "}
@@ -401,9 +412,10 @@ const TopPost = () => {
               </span>
               <p>Reply</p>
             </div>
+            <p className="text-xs">2 days ago</p>
           </div>
         </div>
-        <div className="mx-14 mb-5">
+        <div className="md:mx-14 mb-5 mt-2">
           <div className="border hover:shadow p-4">
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
@@ -413,12 +425,10 @@ const TopPost = () => {
               </label>
               <div className="flex items-center gap-1">
                 <h4 className="text-[16px]">Murad5501</h4>
-                <p className="text-sm">commented</p>
-                <p className="text-xs">2 days ago</p>
               </div>
             </div>
             <div>
-              <p className="text-sm text-gray-500 ml-14 mb-2">
+              <p className="text-sm text-gray-500 sm:ml-14 mb-2">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptatum, nam tenetur sed animi mollitia repellendus
                 laboriosam placeat necessitatibus qui nobis omnis illo{" "}
@@ -439,9 +449,10 @@ const TopPost = () => {
               </span>
               <p>Reply</p>
             </div>
+            <p className="text-xs">2 days ago</p>
           </div>
         </div>
-        <div className="mx-14 mb-5">
+        <div className="md:mx-14 mb-5 mt-2">
           <div className="border hover:shadow p-4">
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
@@ -451,12 +462,15 @@ const TopPost = () => {
               </label>
               <div className="flex items-center gap-1">
                 <h4 className="text-[16px]">Murad5501</h4>
-                <p className="text-sm">commented</p>
-                <p className="text-xs">2 days ago</p>
               </div>
             </div>
             <div>
-              <p className="text-sm text-gray-500 ml-14 mb-2">nice</p>
+              <p className="text-sm text-gray-500 sm:ml-14 mb-2">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Voluptatum, nam tenetur sed animi mollitia repellendus
+                laboriosam placeat necessitatibus qui nobis omnis illo{" "}
+                <span className="text-primary font-semibold">see more...</span>
+              </p>
             </div>
           </div>
           <div className="flex items-center gap-5 m-2 text-gray-500 text-xs">
@@ -472,6 +486,7 @@ const TopPost = () => {
               </span>
               <p>Reply</p>
             </div>
+            <p className="text-xs">2 days ago</p>
           </div>
         </div>
       </div>

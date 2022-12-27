@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import {
   FaBell,
@@ -7,8 +7,10 @@ import {
   FaInfoCircle,
   FaRegImages,
 } from "react-icons/fa";
+import { authContext } from "../../Context/UserContext";
 
 const Header = () => {
+  const { user } = useContext(authContext);
   const menu = (
     <ul className="flex items-center justify-evenly gap-4 md:gap-8 font-semibold">
       <li>
@@ -32,7 +34,9 @@ const Header = () => {
           <span className="text-2xl sm:text-lg md:text-2xl lg:text-lg">
             <FaBell></FaBell>
           </span>
-          <span className="hidden sm:block md:hidden lg:block">Notification</span>
+          <span className="hidden sm:block md:hidden lg:block">
+            Notification
+          </span>
         </Link>
       </li>
       <li>
@@ -43,6 +47,13 @@ const Header = () => {
           <span className="hidden sm:block md:hidden lg:block">About</span>
         </Link>
       </li>
+      {!user && (
+        <li>
+          <Link to='/signin' title="Login">
+            <p className="hidden sm:block md:hidden lg:block">Login</p>
+          </Link>
+        </li>
+      )}
     </ul>
   );
 
@@ -66,33 +77,33 @@ const Header = () => {
         </div>
         <div className="flex-none gap-2">
           <div className="flex gap-8">
-            <div className="hidden md:flex">
-            {menu}
-            </div>
-            <div className="dropdown dropdown-end ">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" alt="" />
-                </div>
-              </label>
-              <ul
-                tabIndex={0}
-                className="mt-3 p-2 shadow menu menu-compact dropdown-content rounded-sm w-52 bg-primary text-white"
-              >
-                <li>
-                  <Link className="justify-between">
-                    Profile
-                    <span className="badge">New</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link>Settings</Link>
-                </li>
-                <li>
-                  <Link>Logout</Link>
-                </li>
-              </ul>
-            </div>
+            <div className="hidden md:flex">{menu}</div>
+            {user && (
+              <div className="dropdown dropdown-end ">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img src="https://placeimg.com/80/80/people" alt="" />
+                  </div>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="mt-3 p-2 shadow menu menu-compact dropdown-content rounded-sm w-52 bg-primary text-white"
+                >
+                  <li>
+                    <Link className="justify-between">
+                      Profile
+                      <span className="badge">New</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link>Settings</Link>
+                  </li>
+                  <li>
+                    <Link>Logout</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </div>
