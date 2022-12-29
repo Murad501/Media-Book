@@ -1,11 +1,86 @@
-import React, { useState } from "react";
+import { format } from "date-fns";
+import React, { useContext, useState } from "react";
+import { toast } from "react-hot-toast";
+import { authContext } from "../../../Context/UserContext";
 import ImageUpload from "./ImageUpload/ImageUpload";
 
 const Post = () => {
   const [addPost, setAddPost] = useState(false);
+  const [imgFile, setImgFile] = useState(null);
+  const { user } = useContext(authContext);
+  const imgbbApi = process.env.REACT_APP_ImgbbKey;
+
+  const handlePost = (event) => {
+    event.preventDefault();
+
+    const addDate = new Date();
+    const postDate = format(addDate, "PP");
+    const description = event.target.description.value;
+
+    const post = {
+      description,
+      authorName: user.displayName,
+      authorEmail: user.email,
+      authorImage: user.photoURL,
+      postTime: postDate,
+      like: []
+    };
+
+    if (imgFile) {
+      const image = imgFile.file;
+      const formData = new FormData();
+      formData.append("image", image);
+      fetch(`https://api.imgbb.com/1/upload?key=${imgbbApi}`, {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.data.url) {
+            post.photo = result.data.url;
+
+            fetch("http://localhost:5000/posts", {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(post),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.acknowledged) {
+                  console.log(data);
+                  setAddPost(false);
+                  setImgFile(null);
+                  toast.success("Post Successfully Updated");
+                  event.target.reset();
+                }
+              });
+          }
+        });
+    } else {
+      fetch("http://localhost:5000/posts", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(post),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.acknowledged) {
+            console.log(data);
+            setAddPost(false);
+            setImgFile(null);
+            toast.success("Post Successfully Updated");
+            event.target.reset();
+          }
+        });
+    }
+  };
 
   return (
-    <div className="py-5 px-5 mt-10 shadow-md">
+    <form onSubmit={handlePost} className="py-5 px-5 mt-10 shadow-md">
       <div
         className={`flex gap-1 items-center justify-center  ${
           addPost && "border-b"
@@ -13,14 +88,11 @@ const Post = () => {
       >
         <label className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
-            <img src="https://placeimg.com/80/80/people" alt="" />
+            <img src={user.photoURL} alt="" />
           </div>
         </label>
         {!addPost && (
-          <div
-            onFocus={() => setAddPost(true)}
-            className="form-control w-full"
-          >
+          <div onFocus={() => setAddPost(true)} className="form-control w-full">
             <input
               type="text"
               placeholder="What's new, Murad?"
@@ -32,6 +104,7 @@ const Post = () => {
           <div className="w-full">
             <div className="form-control w-full">
               <textarea
+                name="description"
                 placeholder="What's new, Murad?"
                 className="textarea placeholder-primary m-1 text-justify focus:outline-none w-full py-2 h-auto"
               />
@@ -41,7 +114,7 @@ const Post = () => {
       </div>
       {addPost && (
         <>
-          <ImageUpload></ImageUpload>
+          <ImageUpload setImgFile={setImgFile}></ImageUpload>
           <div className="flex gap-2 items-start justify-end my-3">
             <button
               onClick={() => setAddPost(false)}
@@ -49,13 +122,16 @@ const Post = () => {
             >
               Cancel
             </button>
-            <button className="bg-primary border border-primary text-white px-3 py-[2px] rounded-sm hover:bg-white hover:text-primary transition-all duration-500">
+            <button
+              type="submit"
+              className="bg-primary border border-primary text-white px-3 py-[2px] rounded-sm hover:bg-white hover:text-primary transition-all duration-500"
+            >
               Post Update
             </button>
           </div>
         </>
       )}
-    </div>
+    </form>
   );
 };
 

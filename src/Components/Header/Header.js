@@ -10,11 +10,18 @@ import {
 import { authContext } from "../../Context/UserContext";
 
 const Header = () => {
-  const { user } = useContext(authContext);
+  const { user, Logout } = useContext(authContext);
+
+  const handleLogOut = () => {
+    Logout()
+    .then(()=>{})
+    .catch(()=>{})
+  }
+
   const menu = (
     <ul className="flex items-center justify-evenly gap-4 md:gap-8 font-semibold">
       <li>
-        <Link className="flex items-center gap-2" title="Media">
+        <Link to='/media' className="flex items-center gap-2" title="Media">
           <span className="text-2xl sm:text-lg md:text-2xl lg:text-lg">
             <FaRegImages></FaRegImages>
           </span>
@@ -22,7 +29,7 @@ const Header = () => {
         </Link>
       </li>
       <li>
-        <Link className="flex items-center gap-2" title="Message">
+        <Link to='/message' className="flex items-center gap-2" title="Message">
           <span className="text-2xl sm:text-lg md:text-2xl lg:text-lg">
             <FaComment></FaComment>
           </span>
@@ -30,7 +37,7 @@ const Header = () => {
         </Link>
       </li>
       <li>
-        <Link className="flex items-center gap-2" title="Notification">
+        <Link to='/notification' className="flex items-center gap-2" title="Notification">
           <span className="text-2xl sm:text-lg md:text-2xl lg:text-lg">
             <FaBell></FaBell>
           </span>
@@ -40,7 +47,7 @@ const Header = () => {
         </Link>
       </li>
       <li>
-        <Link className="flex items-center gap-2" title="About">
+        <Link to='/about' className="flex items-center gap-2" title="About">
           <span className="text-2xl sm:text-lg md:text-2xl lg:text-lg">
             <FaInfoCircle></FaInfoCircle>
           </span>
@@ -61,7 +68,7 @@ const Header = () => {
     <div className="bg-primary">
       <div className="navbar gap-10 bg-primary max-w-[1440px] mx-auto text-white">
         <div className="flex-1">
-          <Link className="text-3xl font-bold flex items-center gap-2 mr-5">
+          <Link to='/' className="text-3xl font-bold flex items-center gap-2 mr-5">
             Media{" "}
             <span>
               <FaBookOpen></FaBookOpen>
@@ -82,7 +89,7 @@ const Header = () => {
               <div className="dropdown dropdown-end ">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
-                    <img src="https://placeimg.com/80/80/people" alt="" />
+                    <img src={user?.photoURL} alt="" />
                   </div>
                 </label>
                 <ul
@@ -99,7 +106,7 @@ const Header = () => {
                     <Link>Settings</Link>
                   </li>
                   <li>
-                    <Link>Logout</Link>
+                    <button onClick={handleLogOut}>Logout</button>
                   </li>
                 </ul>
               </div>

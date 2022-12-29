@@ -2,9 +2,9 @@ import React from "react";
 import { FaTimes } from "react-icons/fa";
 import ImageUploading from "react-images-uploading";
 
-const ImageUpload = () => {
+const ImageUpload = ({setImgFile}) => {
   const [images, setImages] = React.useState([]);
-  const maxNumber = 69;
+  const maxNumber = 1;
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
@@ -41,24 +41,18 @@ const ImageUpload = () => {
             ) : (
               ""
             )}
-            <p>{!imageList.length && "Click or Drop Image here"}</p>
+            <p>{!imageList.length && "Upload Profile Picture"}</p>
 
             {imageList.length === 1 &&
               imageList.map((image, index) => (
                 <div key={index} className="image-item">
-                  <img className="w-60" src={image["data_url"]} alt="" />
-                </div>
-              ))}
-            {imageList.length > 1 &&
-              imageList.map((image, index) => (
-                <div key={index} className="image-item">
-                  <img className="w-60" src={image["data_url"]} alt="" />
+                  {setImgFile(image)}
+                  <img className="w-full" src={image["data_url"]} alt="" />
                 </div>
               ))}
           </div>
         )}
       </ImageUploading>
-      
     </div>
   );
 };

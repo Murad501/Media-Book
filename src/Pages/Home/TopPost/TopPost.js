@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaRegComment, FaRegHeart, FaReply, FaShare } from "react-icons/fa";
 import imgOne from "../../../Assets/imgOne.png";
 import imgTwo from "../../../Assets/imgTwo.jpg";
 import imgThree from "../../../Assets/imgThree.jpg";
+import { authContext } from "../../../Context/UserContext";
 
 const TopPost = () => {
+  const {user} = useContext(authContext)
   return (
     <div>
       <div className="p-5 shadow-md mt-10">
         <div className="flex items-center gap-2">
           <label className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img src="https://placeimg.com/80/80/people" alt="" />
+              <img src={user?.photoURL} alt="" />
             </div>
           </label>
           <div>
@@ -61,7 +63,7 @@ const TopPost = () => {
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" alt="" />
+                  <img src={user?.photoURL} alt="" />
                 </div>
               </label>
               <div className="flex items-center gap-1">
@@ -98,7 +100,7 @@ const TopPost = () => {
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" alt="" />
+                  <img src={user?.photoURL} alt="" />
                 </div>
               </label>
               <div className="flex items-center gap-1">
@@ -135,7 +137,7 @@ const TopPost = () => {
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" alt="" />
+                  <img src={user?.photoURL} alt="" />
                 </div>
               </label>
               <div className="flex items-center gap-1">
@@ -172,7 +174,7 @@ const TopPost = () => {
         <div className="flex items-center gap-2">
           <label className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img src="https://placeimg.com/80/80/people" alt="" />
+              <img src={user?.photoURL} alt="" />
             </div>
           </label>
           <div>
@@ -222,7 +224,7 @@ const TopPost = () => {
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" alt="" />
+                  <img src={user?.photoURL} alt="" />
                 </div>
               </label>
               <div className="flex items-center gap-1">
@@ -259,7 +261,7 @@ const TopPost = () => {
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" alt="" />
+                  <img src={user?.photoURL} alt="" />
                 </div>
               </label>
               <div className="flex items-center gap-1">
@@ -296,7 +298,7 @@ const TopPost = () => {
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" alt="" />
+                  <img src={user?.photoURL} alt="" />
                 </div>
               </label>
               <div className="flex items-center gap-1">
@@ -333,7 +335,7 @@ const TopPost = () => {
         <div className="flex items-center gap-2">
           <label className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img src="https://placeimg.com/80/80/people" alt="" />
+              <img src={user?.photoURL} alt="" />
             </div>
           </label>
           <div>
@@ -383,7 +385,7 @@ const TopPost = () => {
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" alt="" />
+                  <img src={user?.photoURL} alt="" />
                 </div>
               </label>
               <div className="flex items-center gap-1">
@@ -420,7 +422,7 @@ const TopPost = () => {
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" alt="" />
+                  <img src={user?.photoURL} alt="" />
                 </div>
               </label>
               <div className="flex items-center gap-1">
@@ -457,7 +459,7 @@ const TopPost = () => {
             <div className="flex gap-3">
               <label className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" alt="" />
+                  <img src={user?.photoURL} alt="" />
                 </div>
               </label>
               <div className="flex items-center gap-1">
