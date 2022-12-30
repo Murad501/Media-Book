@@ -52,7 +52,6 @@ const Post = () => {
               .then((res) => res.json())
               .then((data) => {
                 if (data.acknowledged) {
-                  console.log(data);
                   setAddPost(false);
                   setImgFile(null);
                   toast.success("Post Successfully Updated");
@@ -73,7 +72,6 @@ const Post = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged) {
-            console.log(data);
             setAddPost(false);
             setImgFile(null);
             toast.success("Post Successfully Updated");

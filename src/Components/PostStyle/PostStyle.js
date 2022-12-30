@@ -25,10 +25,8 @@ const PostStyle = ({ post }) => {
   const handleLike = () => {
     setIsLike(!isLike);
     if (totalLike.includes(user?.email)) {
-      console.log("hello from includes");
       const currentLike = totalLike.filter((lk) => lk !== user?.email);
       setTotalLike(currentLike);
-      console.log("current like", currentLike);
 
       fetch(`http://localhost:5000/likes?id=${_id}`, {
         method: "PATCH",
@@ -42,7 +40,6 @@ const PostStyle = ({ post }) => {
           toast.success(`You unlike ${authorName}'s Post`);
         });
     } else {
-      console.log("hello from not include");
       const currentLike = [...totalLike, user?.email];
       setTotalLike(currentLike);
 
@@ -82,7 +79,7 @@ const PostStyle = ({ post }) => {
       body: JSON.stringify(comment),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then(() => {});
   };
 
   const handleCommentLike = () => {};

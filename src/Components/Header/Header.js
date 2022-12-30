@@ -17,8 +17,6 @@ const Header = () => {
       .catch(() => {});
   };
 
-  console.log(user)
-
   const menu = (
     <ul className="flex items-center justify-evenly gap-4 md:gap-8 font-semibold">
       <li>

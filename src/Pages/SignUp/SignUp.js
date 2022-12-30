@@ -70,7 +70,6 @@ const SignUp = () => {
                   .then((data) => {
                     if (data.acknowledged) {
                       toast.success("user create successfully");
-                      console.log(user);
                       event.target.reset();
                       setIsLoading(false);
                       navigate(from, { replace: true });
