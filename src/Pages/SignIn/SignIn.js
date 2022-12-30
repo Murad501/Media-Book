@@ -7,7 +7,7 @@ import { authContext } from "../../Context/UserContext";
 const SignIn = () => {
   const { loginUser, googleLogin } = useContext(authContext);
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
   let from = location.state?.from?.pathname || "/";
   const handleLoginUser = (event) => {
     event.preventDefault();
@@ -61,6 +61,10 @@ const SignIn = () => {
           </div>
           <h3 className="text-center text-xl font-semibold mt-2">Welcome</h3>
           <p className="text-center mt-5">Join millions of people online</p>
+          <div className="text-sm mt-5">
+            <p className="text-center">gmail: murad@gmail.com</p>
+            <p className="text-center">password: 111111</p>
+          </div>
         </div>
         <form onSubmit={handleLoginUser} className="card-body px-5 pt-5 pb-0">
           <div className="form-control">

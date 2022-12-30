@@ -59,6 +59,10 @@ const LoginForm = () => {
             Please Login
           </h3>
         </div>
+        <div className="text-sm mt-5">
+            <p className="text-center">gmail: murad@gmail.com</p>
+            <p className="text-center">password: 111111</p>
+          </div>
         <form onSubmit={handleLoginUser} className="card-body px-1 pt-5 pb-0">
           <div className="form-control">
             <input
