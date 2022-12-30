@@ -42,7 +42,7 @@ const Post = () => {
           if (result.data.url) {
             post.photo = result.data.url;
 
-            fetch("http://localhost:5000/posts", {
+            fetch("https://server-media-book.vercel.app/posts", {
               method: "POST",
               headers: {
                 "content-type": "application/json",
@@ -62,7 +62,7 @@ const Post = () => {
           }
         });
     } else {
-      fetch("http://localhost:5000/posts", {
+      fetch("https://server-media-book.vercel.app/posts", {
         method: "POST",
         headers: {
           "content-type": "application/json",

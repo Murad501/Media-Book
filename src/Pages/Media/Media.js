@@ -5,7 +5,7 @@ const Media = () => {
     const [posts, setPosts] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/posts')
+        fetch('https://server-media-book.vercel.app/posts')
         .then(res => res.json())
         .then(data => setPosts(data))
     },[])

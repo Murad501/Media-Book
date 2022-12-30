@@ -13,7 +13,7 @@ const About = () => {
   const { data: details = [], refetch } = useQuery({
     queryKey: ["user"],
     queryFn: () =>
-      fetch(`http://localhost:5000/user?email=${user?.email}`).then((res) =>
+      fetch(`https://server-media-book.vercel.app/user?email=${user?.email}`).then((res) =>
         res.json()
       ),
   });
@@ -35,7 +35,7 @@ const About = () => {
       imgURL: details.imgURL,
     };
 
-    fetch(`http://localhost:5000/user?id=${details?._id}`, {
+    fetch(`https://server-media-book.vercel.app/user?id=${details?._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

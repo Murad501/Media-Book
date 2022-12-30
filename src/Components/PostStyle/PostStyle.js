@@ -28,7 +28,7 @@ const PostStyle = ({ post }) => {
       const currentLike = totalLike.filter((lk) => lk !== user?.email);
       setTotalLike(currentLike);
 
-      fetch(`http://localhost:5000/likes?id=${_id}`, {
+      fetch(`https://server-media-book.vercel.app/likes?id=${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
@@ -43,7 +43,7 @@ const PostStyle = ({ post }) => {
       const currentLike = [...totalLike, user?.email];
       setTotalLike(currentLike);
 
-      fetch(`http://localhost:5000/likes?id=${_id}`, {
+      fetch(`https://server-media-book.vercel.app/likes?id=${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
@@ -71,7 +71,7 @@ const PostStyle = ({ post }) => {
       commentTime,
     };
 
-    fetch(`http://localhost:5000/comments?id=${_id}`, {
+    fetch(`https://server-media-book.vercel.app/comments?id=${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

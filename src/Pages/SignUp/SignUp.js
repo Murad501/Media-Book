@@ -59,7 +59,7 @@ const SignUp = () => {
                   address,
                   imgURL: user.photoURL,
                 };
-                fetch(`http://localhost:5000/users`, {
+                fetch(`https://server-media-book.vercel.app/users`, {
                   method: "POST",
                   headers: {
                     "content-type": "application/json",

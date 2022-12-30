@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import PostStyle from "../../../Components/PostStyle/PostStyle";
+import { LoadingContext } from "../../../Context/LoadingContext";
 
 const TopPost = () => {
-  const { data: posts = [] } = useQuery({
+  const {setIsLoading} = useContext(LoadingContext)
+  const { data: posts = [], isFetching } = useQuery({
     queryKey: ["top-post"],
     queryFn: () =>
-      fetch(`http://localhost:5000/top-post`).then((res) => res.json()),
+      fetch(`https://server-media-book.vercel.app/top-post`).then((res) => res.json()),
   });
+  if(isFetching){
+    setIsLoading(true)
+  }
+  if(!isFetching){
+    setIsLoading(false)
+  }
   return (
     <div>
       {posts.map((post) => (
