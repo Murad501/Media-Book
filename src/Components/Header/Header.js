@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import {
-  FaBell,
   FaBookOpen,
   FaComment,
   FaInfoCircle,
@@ -14,14 +13,16 @@ const Header = () => {
 
   const handleLogOut = () => {
     Logout()
-    .then(()=>{})
-    .catch(()=>{})
-  }
+      .then(() => {})
+      .catch(() => {});
+  };
+
+  console.log(user)
 
   const menu = (
     <ul className="flex items-center justify-evenly gap-4 md:gap-8 font-semibold">
       <li>
-        <Link to='/media' className="flex items-center gap-2" title="Media">
+        <Link to="/media" className="flex items-center gap-2" title="Media">
           <span className="text-2xl sm:text-lg md:text-2xl lg:text-lg">
             <FaRegImages></FaRegImages>
           </span>
@@ -29,7 +30,7 @@ const Header = () => {
         </Link>
       </li>
       <li>
-        <Link to='/message' className="flex items-center gap-2" title="Message">
+        <Link to="/message" className="flex items-center gap-2" title="Message">
           <span className="text-2xl sm:text-lg md:text-2xl lg:text-lg">
             <FaComment></FaComment>
           </span>
@@ -37,17 +38,7 @@ const Header = () => {
         </Link>
       </li>
       <li>
-        <Link to='/notification' className="flex items-center gap-2" title="Notification">
-          <span className="text-2xl sm:text-lg md:text-2xl lg:text-lg">
-            <FaBell></FaBell>
-          </span>
-          <span className="hidden sm:block md:hidden lg:block">
-            Notification
-          </span>
-        </Link>
-      </li>
-      <li>
-        <Link to='/about' className="flex items-center gap-2" title="About">
+        <Link to="/about" className="flex items-center gap-2" title="About">
           <span className="text-2xl sm:text-lg md:text-2xl lg:text-lg">
             <FaInfoCircle></FaInfoCircle>
           </span>
@@ -56,8 +47,8 @@ const Header = () => {
       </li>
       {!user && (
         <li>
-          <Link to='/signin' title="Login">
-            <p className="hidden sm:block md:hidden lg:block">Login</p>
+          <Link to="/signin" title="Login">
+            <p>Login</p>
           </Link>
         </li>
       )}
@@ -68,7 +59,10 @@ const Header = () => {
     <div className="bg-primary">
       <div className="navbar gap-10 bg-primary max-w-[1440px] mx-auto text-white">
         <div className="flex-1">
-          <Link to='/' className="text-3xl font-bold flex items-center gap-2 mr-5">
+          <Link
+            to="/"
+            className="text-3xl font-bold flex items-center gap-2 mr-5"
+          >
             Media{" "}
             <span>
               <FaBookOpen></FaBookOpen>

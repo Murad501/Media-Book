@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { toast } from "react-hot-toast";
-import { FaBookOpen, FaGoogle } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../Context/UserContext";
 
-const SignIn = () => {
+const LoginForm = () => {
   const { loginUser, googleLogin } = useContext(authContext);
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
   let from = location.state?.from?.pathname || "/";
   const handleLoginUser = (event) => {
     event.preventDefault();
@@ -50,19 +50,16 @@ const SignIn = () => {
       })
       .catch((err) => console.error(err));
   };
+
   return (
     <div>
-      <div className="card flex-shrink-0 w-full max-w-md mx-auto border border-primary rounded-sm my-20 py-5">
-        <div className="">
-          <div className="text-3xl font-bold flex items-center justify-center">
-            <span>
-              <FaBookOpen></FaBookOpen>
-            </span>
-          </div>
-          <h3 className="text-center text-xl font-semibold mt-2">Welcome</h3>
-          <p className="text-center mt-5">Join millions of people online</p>
+      <div className="card flex-shrink-0 w-full max-w-md mx-auto shadow-md rounded-sm my-5 py-5">
+        <div>
+          <h3 className="text-center text-xl font-semibold mt-2">
+            Please Login
+          </h3>
         </div>
-        <form onSubmit={handleLoginUser} className="card-body px-5 pt-5 pb-0">
+        <form onSubmit={handleLoginUser} className="card-body px-1 pt-5 pb-0">
           <div className="form-control">
             <input
               type="email"
@@ -122,4 +119,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default LoginForm;

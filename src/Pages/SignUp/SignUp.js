@@ -2,14 +2,16 @@ import { updateProfile } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 import { FaBookOpen, FaTimes } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../Context/UserContext";
 import ImageUploading from "react-images-uploading";
 import { LoadingContext } from "../../Context/LoadingContext";
 
 const SignUp = () => {
-  const {setIsLoading} = useContext(LoadingContext)
+  const { setIsLoading } = useContext(LoadingContext);
   const navigate = useNavigate();
+  const location = useLocation()
+  let from = location.state?.from?.pathname || "/";
 
   const { createUser } = useContext(authContext);
 
@@ -55,9 +57,9 @@ const SignUp = () => {
                   email,
                   university,
                   address,
-                  impURL: user.photoURL,
+                  imgURL: user.photoURL,
                 };
-                fetch("http://localhost:5000/users", {
+                fetch(`http://localhost:5000/users`, {
                   method: "POST",
                   headers: {
                     "content-type": "application/json",
@@ -71,7 +73,7 @@ const SignUp = () => {
                       console.log(user);
                       event.target.reset();
                       setIsLoading(false);
-                      navigate("/");
+                      navigate(from, { replace: true });
                     }
                   });
               })
@@ -156,7 +158,7 @@ const SignUp = () => {
                   onImageRemoveAll,
                   dragProps,
                 }) => (
-                  // write your building UI
+                  
                   <div
                     onClick={onImageUpload}
                     className="upload__image-wrapper border min-h-[100px] relative flex justify-center items-center mt-2 p-2 cursor-pointer"
