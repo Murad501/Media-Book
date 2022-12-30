@@ -115,7 +115,8 @@ const PostStyle = ({ post }) => {
       </div>
       {/* like, comment, share */}
       <div className="border-y py-5 mt-5 md:mx-14 text-gray-500 flex items-center justify-around">
-        <div
+        <button
+          disabled={!user}
           onClick={handleLike}
           className={`flex items-center gap-2 cursor-pointer ${
             totalLike.includes(user?.email) && "text-blue-400 font-semibold"
@@ -128,10 +129,13 @@ const PostStyle = ({ post }) => {
               <FaRegHeart></FaRegHeart>
             )}
           </span>
-          <p className="hidden sm:block">{totalLike.includes(user?.email) ? "Liked" : "Like"}</p>
+          <p className="hidden sm:block">
+            {totalLike.includes(user?.email) ? "Liked" : "Like"}
+          </p>
           {totalLike.length ? <p>{totalLike.length}</p> : ""}
-        </div>
-        <div
+        </button>
+        <button
+          disabled={!user}
           onClick={() => setIsTypingComment(true)}
           className="flex items-center gap-2 cursor-pointer"
         >
@@ -139,7 +143,7 @@ const PostStyle = ({ post }) => {
           <span>
             <FaRegComment></FaRegComment>
           </span>
-        </div>
+        </button>
         <div className="flex items-center gap-2">
           <p className="hidden sm:block">Share</p>
           <span>
